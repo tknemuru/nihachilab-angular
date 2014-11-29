@@ -1,7 +1,7 @@
 'use strict'
 describe('e2etest', function() {
   beforeEach(function() {
-    browser.get '/#/';
+    browser.get('/#/');
   });
 
   it('this is e2e test', function() {
