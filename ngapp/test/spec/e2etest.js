@@ -8,5 +8,8 @@ describe('e2eの動作テスト', function () {
     it('e2eの基本的な動作確認', function () {
         expect(true).toBe(true);
     });
+    it('Allo, Alloが表示される', function () {
+        expect($('.jumbotron h1').getText()).toBe('\'Allo, \'Allo!');
+    });
 });
 //# sourceMappingURL=e2etest.js.map
