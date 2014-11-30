@@ -10,3 +10,6 @@ bower_components
 # visual studio
 bin/
 web.config
+
+# images
+/app/images/

@@ -19,7 +19,7 @@ var Nihachilab;
             /**
              * APIサーバの基底URL
              */
-            ApiConfig.BaseApiUrl = '//192.168.152.148:3000/api/v1';
+            ApiConfig.BaseApiUrl = '//192.168.152.149:3000/api/v1';
             /**
              * 動画リソースのURL
              */

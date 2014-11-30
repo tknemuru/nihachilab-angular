@@ -10,7 +10,7 @@ module Nihachilab.Configs {
         /**
          * APIサーバの基底URL
          */
-        private static BaseApiUrl: string = '//192.168.152.148:3000/api/v1';
+        private static BaseApiUrl: string = '//192.168.152.149:3000/api/v1';
 
         /**
          * 動画リソースのURL

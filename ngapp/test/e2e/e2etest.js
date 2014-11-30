@@ -2,6 +2,7 @@
 'use strict';
 describe('e2eの動作テスト', function () {
     beforeEach(function () {
+        // トップページを開く
         browser.get('/#/');
     });
     it('e2eの基本的な動作確認', function () {

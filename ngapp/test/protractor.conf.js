@@ -5,7 +5,7 @@ exports.config = {
     browserName: "chrome",
   },
 
-  specs: ["e2e/e2etest.js"],
+  specs: ["e2e/index-e2e.js"],
 
   baseUrl: 'http://localhost:9000/',
 
