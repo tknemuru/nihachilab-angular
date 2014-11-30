@@ -1,0 +1,11 @@
+﻿<li ng-repeat="video in videos" class="thumbnail-container">
+    <div class="thumbnail-back-wall"></div>
+    <div class="thumbnail-information">
+        {{video.formated_created_at}}<br>
+        {{video.formated_views}} views
+    </div>
+    <img class="thumbnail-image" src="/assets/{{video.thumbnail_path}}">
+    <p class="thumbnail-title">{{video.title_ja}}</p>
+    <div class="thumbnail-desc">{{video.description_ja}}</div>
+    <div id="share-button-{{video.id}}" class="share-button"></div>
+</li>

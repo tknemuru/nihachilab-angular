@@ -24,7 +24,8 @@
 *.sln
 *.sln.ide/
 *.suo
-/obj
+obj/
+bin/
 
 # public
 /public/
