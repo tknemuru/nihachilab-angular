@@ -30,6 +30,12 @@ var Nihachilab;
                 return mockVideos;
             };
             /**
+             * 指定したIDの動画モックを取得します。
+             */
+            VideoMockFactory.getVideoMock = function (id) {
+                return this.getNewInstance(id);
+            };
+            /**
              * 動画モックの新しいインスタンスを取得します。
              */
             VideoMockFactory.getNewInstance = function (id) {

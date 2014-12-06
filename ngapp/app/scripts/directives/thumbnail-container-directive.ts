@@ -17,12 +17,18 @@ module Nihachilab.Directives {
      * 動画サムネイルコンテナの振る舞いを定義します。
      */
     export class ThumbnailContainer implements ng.IDirective {
+        /**
+         * テンプレートURL
+         */
         public templateUrl: string;
 
+        /**
+         * コンストラクタ
+         */
         constructor() {
             this.templateUrl = '/scripts/templates/thumbnail-container-pc-template.html';
         }
     }
 }
-angular.module('Nihachilab.Directives', [])
+angular.module('Nihachilab.Directives')
     .directive('thumbnailContainer', () => { return new Nihachilab.Directives.ThumbnailContainer(); });

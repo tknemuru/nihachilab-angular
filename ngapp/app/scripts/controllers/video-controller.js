@@ -31,5 +31,5 @@ var Nihachilab;
         Controllers.VideoController = VideoController;
     })(Controllers = Nihachilab.Controllers || (Nihachilab.Controllers = {}));
 })(Nihachilab || (Nihachilab = {}));
-angular.module('Nihachilab.Controllers', ['Nihachilab.Services', 'Nihachilab.Directives']).controller('VideoController', ['$scope', 'VideoService', Nihachilab.Controllers.VideoController]);
+angular.module('Nihachilab.Controllers').controller('VideoController', ['$scope', 'VideoService', Nihachilab.Controllers.VideoController]);
 //# sourceMappingURL=video-controller.js.map

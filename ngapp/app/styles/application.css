@@ -98,7 +98,7 @@ li {
     background-color: #464646;
     color: white;
   }
-  .video-player-frame {
+  .video-container iframe {
     position: absolute;
     bottom: 0px;
     left: 1%; 
@@ -112,7 +112,8 @@ li {
     position: absolute;
     right: 0px;
     font-size: 20px;
-    padding: 8px 5px 0px 0px;
+    padding: 4px 5px 0px 0px;
+    margin-top: 0px;
     cursor: pointer;
   }
   .video-container .close-button:hover {
@@ -190,10 +191,14 @@ li {
     bottom: 21px;
     left: 160px;
   }
-  .video-container iframe {
+  .video-player-frame {
     position: absolute;
     bottom: 0px;
     left: 1%; 
+    border: none;
+    overflow: hidden;
+    width: 98%;
+    height: 90%;
   }
   .thumbnail-information {
     position: absolute;

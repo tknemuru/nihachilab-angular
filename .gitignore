@@ -26,6 +26,9 @@
 *.suo
 obj/
 bin/
+web.Debug.config
+web.Release.config
+web.config
 
 # public
 /public/

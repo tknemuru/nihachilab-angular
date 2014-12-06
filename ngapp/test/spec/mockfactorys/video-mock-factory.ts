@@ -34,6 +34,13 @@ module Nihachilab.MockFactorys {
         }
 
         /**
+         * 指定したIDの動画モックを取得します。
+         */
+        public static getVideoMock(id: number): Nihachilab.Models.Video {
+            return this.getNewInstance(id);
+        }
+
+        /**
          * 動画モックの新しいインスタンスを取得します。
          */
         private static getNewInstance(id: number): Nihachilab.Models.Video {

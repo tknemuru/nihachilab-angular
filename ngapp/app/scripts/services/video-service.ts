@@ -36,5 +36,5 @@ module Nihachilab.Services {
         }
     }
 }
-angular.module('Nihachilab.Services', [])
+angular.module('Nihachilab.Services')
     .service('VideoService', ['$http', Nihachilab.Services.VideoService]);

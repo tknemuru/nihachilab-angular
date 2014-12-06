@@ -32,5 +32,5 @@ var Nihachilab;
         Services.VideoService = VideoService;
     })(Services = Nihachilab.Services || (Nihachilab.Services = {}));
 })(Nihachilab || (Nihachilab = {}));
-angular.module('Nihachilab.Services', []).service('VideoService', ['$http', Nihachilab.Services.VideoService]);
+angular.module('Nihachilab.Services').service('VideoService', ['$http', Nihachilab.Services.VideoService]);
 //# sourceMappingURL=video-service.js.map

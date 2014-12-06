@@ -44,5 +44,5 @@ module Nihachilab.Controllers {
         }
     }
 }
-angular.module('Nihachilab.Controllers', ['Nihachilab.Services', 'Nihachilab.Directives'])
+angular.module('Nihachilab.Controllers')
     .controller('VideoController', ['$scope', 'VideoService', Nihachilab.Controllers.VideoController]);
