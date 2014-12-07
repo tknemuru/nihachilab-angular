@@ -22,8 +22,30 @@ describe('動画サービスのテスト', () => {
     }));
 
     it('動画リストを全件取得する', () => {
-        videoService.get((data, status, headers, config) => {
+        videoService.getVideos((data, status, headers, config) => {
             expect(data.length).toBe(Nihachilab.MockFactorys.VideoMockFactory.getMockCount());
+        });
+        $httpBackend.flush();
+    });
+
+    it('指定した動画を取得する', () => {
+        videoService.getVideo(1, (data: Nihachilab.Models.Video, status, headers, config) => {
+            expect(data.id).toBe(1);
+        });
+        $httpBackend.flush();
+    });
+
+    it('指定した動画の再生回数をカウントアップする', () => {
+        var lastViews: number;
+        videoService.getVideo(1, (data: Nihachilab.Models.Video, status, headers, config) => {
+            lastViews = data.views;
+        });
+        $httpBackend.flush();
+
+        videoService.countUpViews(1, (data, status, headers, config) => {
+            videoService.getVideo(1, (data: Nihachilab.Models.Video, status, headers, config) => {
+                expect(data.views).toBe(lastViews + 1);
+            });
         });
         $httpBackend.flush();
     });

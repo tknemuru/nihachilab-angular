@@ -17,7 +17,7 @@ module Nihachilab.Controllers {
      * 動画リストの取得機能を提供します。
      */
     export interface IVideoGettable {
-        get: (successCallback: ng.IHttpPromiseCallback<Models.Video[]>
+        getVideos: (successCallback: ng.IHttpPromiseCallback<Models.Video[]>
         , errorCallback?: ng.IHttpPromiseCallback<any>) => void;
     }
 
@@ -38,7 +38,7 @@ module Nihachilab.Controllers {
          */
         private setVideos(): void {
             var videos: Nihachilab.Models.Video[] = [];
-            this.videoService.get((data: Nihachilab.Models.Video[]) => {
+            this.videoService.getVideos((data: Nihachilab.Models.Video[]) => {
                 this.$scope.videos = data;
             });
         }

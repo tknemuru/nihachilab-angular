@@ -37,6 +37,6 @@ angular
         });
     });
 
-angular.module('Nihachilab.Directives', []);
 angular.module('Nihachilab.Services', []);
+angular.module('Nihachilab.Directives', ['Nihachilab.Services']);
 angular.module('Nihachilab.Controllers', ['Nihachilab.Services', 'Nihachilab.Directives']);

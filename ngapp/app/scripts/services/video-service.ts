@@ -20,9 +20,9 @@ module Nihachilab.Services {
         }
 
         /**
-         * 動画を全件取得します。
+         * 動画リストを取得します。
          */
-        public get(successCallback: ng.IHttpPromiseCallback<Models.Video[]>
+        public getVideos(successCallback: ng.IHttpPromiseCallback<Models.Video[]>
             , errorCallback: ng.IHttpPromiseCallback<any> = null): void {
             this.$http.get<Models.Video[]>(this.baseApiUrl)
                 .success(successCallback)
@@ -30,9 +30,25 @@ module Nihachilab.Services {
         }
 
         /**
+         * 指定したIDの動画を取得します。
+         */
+        public getVideo(id: number
+            , successCallback: ng.IHttpPromiseCallback<Models.Video>
+            , errorCallback: ng.IHttpPromiseCallback<any> = null): void {
+            this.$http.get<Models.Video>(this.baseApiUrl + '/' + id)
+                .success(successCallback)
+                .error(errorCallback);
+        }    
+
+        /**
          * 指定した動画の再生数をカウントアップします。
          */
-        public countUpViews(): void {
+        public countUpViews(id: number
+            , successCallback: ng.IHttpPromiseCallback<any> = null
+            , errorCallback: ng.IHttpPromiseCallback<any> = null): void {
+            this.$http.post(this.baseApiUrl + '/views/' + id, null)
+                .success(successCallback)
+                .error(errorCallback);
         }
     }
 }

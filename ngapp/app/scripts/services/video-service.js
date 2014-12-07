@@ -16,16 +16,26 @@ var Nihachilab;
                 this.baseApiUrl = Nihachilab.Configs.ApiConfig.getVideoUrl();
             }
             /**
-             * 動画を全件取得します。
+             * 動画リストを取得します。
              */
-            VideoService.prototype.get = function (successCallback, errorCallback) {
+            VideoService.prototype.getVideos = function (successCallback, errorCallback) {
                 if (errorCallback === void 0) { errorCallback = null; }
                 this.$http.get(this.baseApiUrl).success(successCallback).error(errorCallback);
             };
             /**
+             * 指定したIDの動画を取得します。
+             */
+            VideoService.prototype.getVideo = function (id, successCallback, errorCallback) {
+                if (errorCallback === void 0) { errorCallback = null; }
+                this.$http.get(this.baseApiUrl + '/' + id).success(successCallback).error(errorCallback);
+            };
+            /**
              * 指定した動画の再生数をカウントアップします。
              */
-            VideoService.prototype.countUpViews = function () {
+            VideoService.prototype.countUpViews = function (id, successCallback, errorCallback) {
+                if (successCallback === void 0) { successCallback = null; }
+                if (errorCallback === void 0) { errorCallback = null; }
+                this.$http.post(this.baseApiUrl + '/views/' + id, null).success(successCallback).error(errorCallback);
             };
             return VideoService;
         })();

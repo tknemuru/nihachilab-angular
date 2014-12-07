@@ -22,7 +22,7 @@ var Nihachilab;
             VideoController.prototype.setVideos = function () {
                 var _this = this;
                 var videos = [];
-                this.videoService.get(function (data) {
+                this.videoService.getVideos(function (data) {
                     _this.$scope.videos = data;
                 });
             };

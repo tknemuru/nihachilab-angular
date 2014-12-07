@@ -16,8 +16,27 @@ describe('動画サービスのテスト', function () {
         videoService = new Nihachilab.Services.VideoService($http);
     }));
     it('動画リストを全件取得する', function () {
-        videoService.get(function (data, status, headers, config) {
+        videoService.getVideos(function (data, status, headers, config) {
             expect(data.length).toBe(Nihachilab.MockFactorys.VideoMockFactory.getMockCount());
+        });
+        $httpBackend.flush();
+    });
+    it('指定した動画を取得する', function () {
+        videoService.getVideo(1, function (data, status, headers, config) {
+            expect(data.id).toBe(1);
+        });
+        $httpBackend.flush();
+    });
+    it('指定した動画の再生回数をカウントアップする', function () {
+        var lastViews;
+        videoService.getVideo(1, function (data, status, headers, config) {
+            lastViews = data.views;
+        });
+        $httpBackend.flush();
+        videoService.countUpViews(1, function (data, status, headers, config) {
+            videoService.getVideo(1, function (data, status, headers, config) {
+                expect(data.views).toBe(lastViews + 1);
+            });
         });
         $httpBackend.flush();
     });

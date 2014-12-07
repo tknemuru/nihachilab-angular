@@ -11,7 +11,16 @@ var Nihachilab;
              * コンストラクタ
              */
             function VideoMockFactory($httpBackend) {
-                $httpBackend.whenGET(Nihachilab.Configs.ApiConfig.getVideoUrl()).respond(VideoMockFactory.getVideoMocks());
+                var _this = this;
+                this.videos = VideoMockFactory.getVideoMocks();
+                $httpBackend.whenGET(Nihachilab.Configs.ApiConfig.getVideoUrl()).respond(this.videos);
+                $httpBackend.whenGET(Nihachilab.Configs.ApiConfig.getVideoUrlRegExp()).respond(function (method, url) {
+                    return [200, _this.getVideoMock(url)];
+                });
+                $httpBackend.whenPOST(Nihachilab.Configs.ApiConfig.getViewsUrlRegExp()).respond(function (method, url) {
+                    _this.countUpViews(url);
+                    return [200, {}, {}];
+                });
             }
             /**
              * 動画モックリストの要素数を取得します。
@@ -32,8 +41,9 @@ var Nihachilab;
             /**
              * 指定したIDの動画モックを取得します。
              */
-            VideoMockFactory.getVideoMock = function (id) {
-                return this.getNewInstance(id);
+            VideoMockFactory.prototype.getVideoMock = function (url) {
+                var mockId = url.match(Nihachilab.Configs.ApiConfig.getVideoUrlRegExp())[1];
+                return this.videos[parseInt(mockId)];
             };
             /**
              * 動画モックの新しいインスタンスを取得します。
@@ -42,6 +52,13 @@ var Nihachilab;
                 var video = new Nihachilab.Models.Video();
                 video.id = id;
                 return video;
+            };
+            /**
+             * 再生回数をカウントアップします。
+             */
+            VideoMockFactory.prototype.countUpViews = function (url) {
+                var mockId = url.match(Nihachilab.Configs.ApiConfig.getViewsUrlRegExp())[1];
+                this.videos[parseInt(mockId)].views++;
             };
             VideoMockFactory.mockCount = 2;
             return VideoMockFactory;
