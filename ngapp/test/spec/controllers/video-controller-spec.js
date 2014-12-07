@@ -10,6 +10,7 @@ describe('動画コントローラのテスト', function () {
     var factory;
     var videoController;
     var videoService;
+    var sortItemCreatorService;
     beforeEach(inject(function (_$httpBackend_, _$http_, _$rootScope_) {
         $rootScope = _$rootScope_;
         $scope = $rootScope.$new();
@@ -19,8 +20,10 @@ describe('動画コントローラのテスト', function () {
         factory = new Nihachilab.MockFactorys.VideoMockFactory($httpBackend);
         // 動画サービスの生成
         videoService = new Nihachilab.Services.VideoService($http);
+        // ソートアイテム作成サービスの生成
+        sortItemCreatorService = new Nihachilab.Services.SortItemCreatorService();
         // 動画コントローラの生成
-        videoController = new Nihachilab.Controllers.VideoController($scope, videoService);
+        videoController = new Nihachilab.Controllers.VideoController($scope, videoService, sortItemCreatorService);
         $httpBackend.flush();
     }));
     it('動画リストを全件取得して$scopeにセットする', function () {

@@ -15,9 +15,11 @@
 
     <!-- models -->
     <script type="text/javascript" src="scripts/models/video-model.js"></script>
+    <script type="text/javascript" src="scripts/models/sort-item-model.js"></script>
 
     <!-- services -->
     <script type="text/javascript" src="scripts/services/video-service.js"></script>
+    <script type="text/javascript" src="scripts/services/sort-item-creator-service.js"></script>
 
     <!-- directives -->
     <script type="text/javascript" src="scripts/directives/thumbnail-container-directive.js"></script>
@@ -25,12 +27,14 @@
     <script type="text/javascript" src="scripts/directives/list-close-directive.js"></script>
     <script type="text/javascript" src="scripts/directives/video-window-directive.js"></script>
     <script type="text/javascript" src="scripts/directives/video-views-countup-directive.js"></script>
+    <script type="text/javascript" src="scripts/directives/sort-item-container-directive.js"></script>
 
     <!-- controllers -->
     <script type="text/javascript" src="scripts/controllers/video-controller.js"></script>
 </head>
 <body>
     <div id="container" ng-controller="VideoController">
+        <ul sort-item-container id="sort-item-container"></ul>
         <ul thumbnail-container></ul>
     </div>
 </body>
