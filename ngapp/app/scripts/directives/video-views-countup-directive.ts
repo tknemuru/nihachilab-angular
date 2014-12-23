@@ -46,4 +46,4 @@ module Nihachilab.Directives {
     }
 }
 angular.module('Nihachilab.Directives')
-    .directive('videoViewsCountup', ($http) => { return new Nihachilab.Directives.VideoViewsCountUp(new Nihachilab.Services.VideoService($http)); });
+    .directive('videoViewsCountup', ['VideoService', (countUpper) => { return new Nihachilab.Directives.VideoViewsCountUp(countUpper) }]);

@@ -36,4 +36,4 @@ module Nihachilab.Directives {
     }
 }
 angular.module('Nihachilab.Directives')
-    .directive('videoWindowCreator', ($compile) => { return new Nihachilab.Directives.VideoWindowCreator($compile); });
+    .directive('videoWindowCreator', ['$compile', ($compile) => { return new Nihachilab.Directives.VideoWindowCreator($compile); }]);

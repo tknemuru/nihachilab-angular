@@ -48,4 +48,4 @@ module Nihachilab.Directives {
     }
 }
 angular.module('Nihachilab.Directives')
-    .directive('videoWindow', ($sce) => { return new Nihachilab.Directives.VideoWindow($sce); });
+    .directive('videoWindow', ['$sce', ($sce) => { return new Nihachilab.Directives.VideoWindow($sce); }]);

@@ -26,7 +26,7 @@ var Nihachilab;
         Directives.VideoWindowCreator = VideoWindowCreator;
     })(Directives = Nihachilab.Directives || (Nihachilab.Directives = {}));
 })(Nihachilab || (Nihachilab = {}));
-angular.module('Nihachilab.Directives').directive('videoWindowCreator', function ($compile) {
+angular.module('Nihachilab.Directives').directive('videoWindowCreator', ['$compile', function ($compile) {
     return new Nihachilab.Directives.VideoWindowCreator($compile);
-});
+}]);
 //# sourceMappingURL=video-window-creator-directive.js.map

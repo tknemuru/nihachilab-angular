@@ -24,7 +24,7 @@ var Nihachilab;
         Directives.VideoViewsCountUp = VideoViewsCountUp;
     })(Directives = Nihachilab.Directives || (Nihachilab.Directives = {}));
 })(Nihachilab || (Nihachilab = {}));
-angular.module('Nihachilab.Directives').directive('videoViewsCountup', function ($http) {
-    return new Nihachilab.Directives.VideoViewsCountUp(new Nihachilab.Services.VideoService($http));
-});
+angular.module('Nihachilab.Directives').directive('videoViewsCountup', ['VideoService', function (countUpper) {
+    return new Nihachilab.Directives.VideoViewsCountUp(countUpper);
+}]);
 //# sourceMappingURL=video-views-countup-directive.js.map
