@@ -9,14 +9,6 @@
  * Main module of the application.
  */
 angular
-  //.module('ngappApp', [
-  //  'ngAnimate',
-  //  'ngCookies',
-  //  'ngResource',
-  //  'ngRoute',
-  //  'ngSanitize',
-  //  'ngTouch'
-  //])
     .module('Nihachilab', [
         'Nihachilab.Directives',
         'Nihachilab.Services',
