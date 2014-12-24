@@ -6,20 +6,19 @@
 
 describe('動画コントローラのテスト', () => {
     var $rootScope: ng.IRootScopeService;
-    var $scope: Nihachilab.Controllers.Scope;
+    var $scope: Nihachilab.Controllers.IVideoScope;
     var $httpBackend: ng.IHttpBackendService;
     var $http: ng.IHttpService;
     var factory: Nihachilab.MockFactorys.VideoMockFactory;
     var videoController: Nihachilab.Controllers.VideoController;
     var videoService: Nihachilab.Services.VideoService;
-    var sortItemCreatorService: Nihachilab.Services.SortItemCreatorService;
 
     beforeEach(inject((_$httpBackend_: ng.IHttpBackendService
         , _$http_: ng.IHttpService
         , _$rootScope_: ng.IRootScopeService) => {
 
         $rootScope = _$rootScope_;
-        $scope = <Nihachilab.Controllers.Scope>$rootScope.$new();
+        $scope = <Nihachilab.Controllers.IVideoScope>$rootScope.$new();
         $httpBackend = _$httpBackend_;
         $http = _$http_;
 
@@ -29,11 +28,8 @@ describe('動画コントローラのテスト', () => {
         // 動画サービスの生成
         videoService = new Nihachilab.Services.VideoService($http);
 
-        // ソートアイテム作成サービスの生成
-        sortItemCreatorService = new Nihachilab.Services.SortItemCreatorService();
-
         // 動画コントローラの生成
-        videoController = new Nihachilab.Controllers.VideoController($scope, videoService, sortItemCreatorService);
+        videoController = new Nihachilab.Controllers.VideoController($scope, videoService);
         $httpBackend.flush();
     }));
 

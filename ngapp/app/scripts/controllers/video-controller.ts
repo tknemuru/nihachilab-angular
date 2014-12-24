@@ -6,16 +6,31 @@ module Nihachilab.Controllers {
     /**
      * $svopeインターフェイス
      */
-    export interface Scope extends ng.IScope {
+    export interface IVideoScope extends ng.IScope {
         /**
          * 動画リスト
          */
         videos: Nihachilab.Models.Video[];
 
         /**
-         * ソートアイテムリスト
+         * ページ制御された動画リスト
          */
-        sortItems: Nihachilab.Models.SortItem[];
+        paginatedVideos: Nihachilab.Models.Video[];
+
+        /**
+         * 現在のページ
+         */
+        currentPage: number;
+
+        /**
+         * 1ページあたりのアイテム数
+         */
+        itemsPerPage: number;
+
+        /**
+         * アイテムの合計数
+         */
+        totalItems: number;
     }
 
     /**
@@ -27,24 +42,15 @@ module Nihachilab.Controllers {
     }
 
     /**
-     * ソートアイテムリストの作成機能を提供します。
-     */
-    export interface ISortItemsCoreatable {
-        create: () => Nihachilab.Models.SortItem[];
-    }
-
-    /**
      * 動画コントローラ
      */
     export class VideoController {
         /**
          * コンストラクタ
          */
-        constructor(private $scope: Scope
-            , private videoGetter: IVideoGettable
-            , private sortItemCreator: ISortItemsCoreatable) {
+        constructor(private $scope: IVideoScope
+            , private videoGetter: IVideoGettable) {
             this.setVideos();
-            this.setSortItems();
         }
 
         /**
@@ -56,14 +62,7 @@ module Nihachilab.Controllers {
                 this.$scope.videos = data;
             });
         }
-
-        /**
-         * ソートアイテムを$scopeにセットします。
-         */
-        private setSortItems(): void {
-            this.$scope.sortItems = this.sortItemCreator.create();
-        }
     }
 }
 angular.module('Nihachilab.Controllers')
-    .controller('VideoController', ['$scope', 'VideoService', 'SortItemCreatorService', Nihachilab.Controllers.VideoController]);
+    .controller('VideoController', ['$scope', 'VideoService', Nihachilab.Controllers.VideoController]);

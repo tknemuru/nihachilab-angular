@@ -1,7 +1,7 @@
-﻿<li ng-repeat="video in videos" class="video-container" id="thumbnail-container-{{video.video_id}}">
+﻿<li ng-repeat="video in paginatedVideos" class="video-container" id="thumbnail-container-{{video.video_id}}">
     <iframe allowfullscreen frameborder="0"
             class="video-frame"
-            src="https://www.youtube.com/embed/PWh9WnSkiew">
+            src="{{video.video_id | youtubeVideoUrl}}">
     </iframe>
     <div class="video-info-container">
         <p class="video-title">{{video.title_ja}}</p>

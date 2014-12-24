@@ -10,9 +10,11 @@
  */
 angular
     .module('Nihachilab', [
-        'Nihachilab.Directives',
         'Nihachilab.Services',
-        'Nihachilab.Controllers'
+        'Nihachilab.Filters',
+        'Nihachilab.Directives',
+        'Nihachilab.Controllers',
+        'ui.bootstrap'
     ])
     .config(function ($routeProvider) {
       $routeProvider
@@ -30,5 +32,6 @@ angular
     });
 
 angular.module('Nihachilab.Services', []);
-angular.module('Nihachilab.Directives', ['Nihachilab.Services']);
-angular.module('Nihachilab.Controllers', ['Nihachilab.Services', 'Nihachilab.Directives']);
+angular.module('Nihachilab.Filters', []);
+angular.module('Nihachilab.Directives', ['Nihachilab.Services', 'ui.bootstrap']);
+angular.module('Nihachilab.Controllers', ['Nihachilab.Services', 'Nihachilab.Filters', 'Nihachilab.Directives']);

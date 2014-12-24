@@ -5,21 +5,21 @@ var Nihachilab;
     (function (Directives) {
         "use strict";
         /**
-         * 動画サムネイルコンテナの振る舞いを定義します。
+         * 動画コンテナの振る舞いを定義します。
          */
-        var ThumbnailContainer = (function () {
+        var VideoContainer = (function () {
             /**
              * コンストラクタ
              */
-            function ThumbnailContainer() {
+            function VideoContainer() {
                 this.templateUrl = '/scripts/templates/video-container-template.html';
             }
-            return ThumbnailContainer;
+            return VideoContainer;
         })();
-        Directives.ThumbnailContainer = ThumbnailContainer;
+        Directives.VideoContainer = VideoContainer;
     })(Directives = Nihachilab.Directives || (Nihachilab.Directives = {}));
 })(Nihachilab || (Nihachilab = {}));
-angular.module('Nihachilab.Directives').directive('thumbnailContainer', function () {
-    return new Nihachilab.Directives.ThumbnailContainer();
+angular.module('Nihachilab.Directives').directive('videoContainer', function () {
+    return new Nihachilab.Directives.VideoContainer();
 });
-//# sourceMappingURL=thumbnail-container-directive.js.map
+//# sourceMappingURL=video-container-directive.js.map

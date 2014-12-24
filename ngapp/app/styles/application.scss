@@ -32,7 +32,7 @@ li {
         flex-wrap: wrap;
         position: relative;
         width: 820px;
-        height: 250px;
+        height: 245px;
         background-color: #464646;
         color: white;
     }
@@ -54,37 +54,5 @@ li {
     .video-title {
         margin: 5px;
         font-size: 20px;
-    }
-
-    .sort-item {
-        cursor: pointer;
-        background-color: #3bbec0;
-        color: white;
-        width: 150px;
-        height: 40px;
-        font-size: 20px;
-        text-align: center;
-        padding-top: 22px;
-        float: left;
-    }
-
-    .sort-item:hover {
-        background-color: #319ba1;
-    }
-
-    .sort-item-selected {
-        cursor: pointer;
-        background-color: #319ba1;
-        color: white;
-        width: 150px;
-        height: 40px;
-        font-size: 20px;
-        text-align: center;
-        padding-top: 22px;
-        float: left;
-    }
-
-    #sort-item-container {
-        height: 57px;
     }
 }

@@ -11,12 +11,10 @@ var Nihachilab;
             /**
              * コンストラクタ
              */
-            function VideoController($scope, videoGetter, sortItemCreator) {
+            function VideoController($scope, videoGetter) {
                 this.$scope = $scope;
                 this.videoGetter = videoGetter;
-                this.sortItemCreator = sortItemCreator;
                 this.setVideos();
-                this.setSortItems();
             }
             /**
              * 動画リストを$scopeにセットします。
@@ -28,16 +26,10 @@ var Nihachilab;
                     _this.$scope.videos = data;
                 });
             };
-            /**
-             * ソートアイテムを$scopeにセットします。
-             */
-            VideoController.prototype.setSortItems = function () {
-                this.$scope.sortItems = this.sortItemCreator.create();
-            };
             return VideoController;
         })();
         Controllers.VideoController = VideoController;
     })(Controllers = Nihachilab.Controllers || (Nihachilab.Controllers = {}));
 })(Nihachilab || (Nihachilab = {}));
-angular.module('Nihachilab.Controllers').controller('VideoController', ['$scope', 'VideoService', 'SortItemCreatorService', Nihachilab.Controllers.VideoController]);
+angular.module('Nihachilab.Controllers').controller('VideoController', ['$scope', 'VideoService', Nihachilab.Controllers.VideoController]);
 //# sourceMappingURL=video-controller.js.map
