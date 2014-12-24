@@ -12,7 +12,7 @@ var Nihachilab;
              * コンストラクタ
              */
             function ThumbnailContainer() {
-                this.templateUrl = '/scripts/templates/thumbnail-container-pc-template.html';
+                this.templateUrl = '/scripts/templates/video-container-template.html';
             }
             return ThumbnailContainer;
         })();

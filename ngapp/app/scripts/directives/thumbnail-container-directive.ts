@@ -26,7 +26,7 @@ module Nihachilab.Directives {
          * コンストラクタ
          */
         constructor() {
-            this.templateUrl = '/scripts/templates/thumbnail-container-pc-template.html';
+            this.templateUrl = '/scripts/templates/video-container-template.html';
         }
     }
 }

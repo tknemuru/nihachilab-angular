@@ -14,224 +14,77 @@
  *= require_self
  */
 body {
-  background-color: #f6f5f6;
-  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    background-color: #f6f5f6;
+    font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 }
 
 ul {
-  list-style: none;
+    list-style: none;
 }
+
 li {
-  margin: 2px;
+    margin: 2px;
 }
 
 @media screen and (min-width: 769px) {
-  .app-head {
-    position: relative;
-    height: 800px;
-  }
-  .title {
-    position: absolute;
-    top: 405px;
-    left: 34%;
-    font-size: 152px;
-    color: white;
-  }
-  .thumbnail-container {
-    position: relative;
-    width: 650px;
-    height: 250px;
-    background-color: #464646;
-    color: white;
-  }
-  .thumbnail-image {
-    float:left;
-    cursor: pointer;
-  }
-  .thumbnail-title {
-    margin: 5px;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  .thumbnail-title:hover {
-    color: #3bbec0;
-  } 
-  .thumbnail-desc {
-    padding: 5px;
-  }
-  .thumbnail-back-wall {
-    float: left;
-    width: 300px;
-    height: 250px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    cursor: pointer;
-    z-index: 100;
-  }
-  .thumbnail-back-wall:hover {
-    opacity:0.6;
-    filter: alpha(opacity=60);
-    -ms-filter: "alpha( opacity=60 )";
-    background-color: #3bbec0; 
-    display:block;
-    z-index: 100;
-  }
-  .thumbnail-information {
-    width: 290px;
-    height: 45px;
-    position: absolute;
-    bottom: 0px;
-    background-color: black;
-    opacity:0.8;
-    filter: alpha(opacity=80);
-    -ms-filter: "alpha( opacity=80 )";
-    z-index: 50;
-    font-size: 16px;
-    padding-top: 5px;
-    padding-left: 10px;
-  }
-  .video-container {
-    position: relative;
-    width: 650px;
-    height: 361px;
-    background-color: #464646;
-    color: white;
-  }
-  .video-container iframe {
-    position: absolute;
-    bottom: 0px;
-    left: 1%; 
-    border: none;
-    overflow: hidden;
-    width: 98%;
-    height: 90%;
-  }
-  .video-container .close-button {
-    width: 55px;
-    position: absolute;
-    right: 0px;
-    font-size: 20px;
-    padding: 4px 5px 0px 0px;
-    margin-top: 0px;
-    cursor: pointer;
-  }
-  .video-container .close-button:hover {
-    color: #319ba1;
-  }
-  .share-button {
-    position: absolute;
-    bottom: 25px;
-    left: 430px;
-  }
-  .sort-item {
-    cursor: pointer;
-    background-color: #3bbec0;
-    color: white;
-    width: 150px;
-    height: 40px;
-    font-size: 20px;
-    text-align: center;
-    padding-top: 22px;
-    float: left;
-  }
-  .sort-item:hover {
-    background-color: #319ba1;
-  }
-  .sort-item-selected {
-    cursor: pointer;
-    background-color: #319ba1;
-    color: white;
-    width: 150px;
-    height: 40px;
-    font-size: 20px;
-    text-align: center;
-    padding-top: 22px;
-    float: left;
-  }
-  #sort-item-container {
-    height: 57px;
-  }
-}
+    .video-container {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        width: 820px;
+        height: 250px;
+        background-color: #464646;
+        color: white;
+    }
 
-@media screen and (max-width:640px) {
-  body {
-    padding-left: 10px;
-  }
-  ul {
-    margin: 0px;
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-    width /***/:auto;
-  }
-  .app-head {
-    height: 100px;
-  }
-  .thumbnail-container {
-    width: 300px;
-    height: 310px;
-    background-color: #464646;
-    color: white;
-  }
-  .thumbnail-title {
-    margin: 5px;
-    font-size: 15px;
-  }
-  .title {
-    position: absolute;
-    top: 40px;
-    left: 20%;
-    font-size: 60px;
-    color: black;
-  }
-  .share-button {
-    position: absolute;
-    bottom: 21px;
-    left: 160px;
-  }
-  .video-player-frame {
-    position: absolute;
-    bottom: 0px;
-    left: 1%; 
-    border: none;
-    overflow: hidden;
-    width: 98%;
-    height: 90%;
-  }
-  .thumbnail-information {
-    position: absolute;
-    bottom: 2px;
-    padding-left: 5px;
-  }
-  .sort-item {
-    cursor: pointer;
-    background-color: #3bbec0;
-    color: white;
-    width: 140px;
-    height: 40px;
-    font-size: 20px;
-    text-align: center;
-    padding-top: 22px;
-    float: left;
-  }
-  .sort-item:hover {
-    background-color: #319ba1;
-  }
-  .sort-item-selected {
-    cursor: pointer;
-    background-color: #319ba1;
-    color: white;
-    width: 140px;
-    height: 40px;
-    font-size: 20px;
-    text-align: center;
-    padding-top: 22px;
-    float: left;
-  }
-  #sort-item-container {
-    height: 57px;
-    padding-bottom: 15px;
-  }
+    .video-frame {
+        width: 475px;
+        height: 245px;
+    }
+
+    .video-info-container {
+        width: 335px;
+        padding: 5px;
+    }
+
+    .video-desc {
+        width: 335px;
+    }
+
+    .video-title {
+        margin: 5px;
+        font-size: 20px;
+    }
+
+    .sort-item {
+        cursor: pointer;
+        background-color: #3bbec0;
+        color: white;
+        width: 150px;
+        height: 40px;
+        font-size: 20px;
+        text-align: center;
+        padding-top: 22px;
+        float: left;
+    }
+
+    .sort-item:hover {
+        background-color: #319ba1;
+    }
+
+    .sort-item-selected {
+        cursor: pointer;
+        background-color: #319ba1;
+        color: white;
+        width: 150px;
+        height: 40px;
+        font-size: 20px;
+        text-align: center;
+        padding-top: 22px;
+        float: left;
+    }
+
+    #sort-item-container {
+        height: 57px;
+    }
 }
